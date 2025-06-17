@@ -46,8 +46,10 @@ alias la='ls -A'
 # change directory to the neovim configuration directory
 alias nvconf='cd ~/.config/nvim'
 
-# see how many files have changed in the current git repository
-alias fch='git diff --shortstat'
+# git aliases
+alias fch='git diff --shortstat'      # see how many files have changed in the current git repository
+alias explode='git reset --hard @{u}' # git hard reset to upstream
+alias lg='lazygit'                    # lazygit
 
 eval "$(starship init bash)"
 
