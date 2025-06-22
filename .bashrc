@@ -11,6 +11,11 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
+# Functions from bash_functions
+if [ -f "$HOME/.local/bin/bash_functions" ]; then
+  . "$HOME/.local/bin/bash_functions" # Using '.' (source)
+fi
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -51,8 +56,12 @@ alias fch='git diff --shortstat'      # see how many files have changed in the c
 alias explode='git reset --hard @{u}' # git hard reset to upstream
 alias lg='lazygit'                    # lazygit
 
-eval "$(starship init bash)"
+# rsync aliases
+alias grtpc='rsync_git_repo pc:/home/rifaldo/work/sms-be/'
+alias grtlap='rsync_git_repo laptop:/home/rifaldo/work/sms/be-sales-management-system/'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+eval "$(starship init bash)"

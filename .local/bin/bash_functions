@@ -1,0 +1,31 @@
+#!/bin/bash
+function rsync_git_repo() {
+  if [ -z "$1" ]; then
+    echo "Usage: rsync_git_repo <user@host:destination_path>"
+    return 1
+  fi
+
+  local current_dir=$(pwd)
+  local repo_name=$(basename "$current_dir")
+  local remote_dest="$1"
+
+  # Check if the current directory is a Git repository
+  if [ ! -d ".git" ]; then
+    echo "Error: Not a Git repository. Aborting."
+    return 1
+  fi
+
+  echo "Attempting to rsync '$repo_name' from '$current_dir' to '$remote_dest/$repo_name'"
+  read -p "Are you sure you want to proceed? (yes/no) " -n 3 -r
+  echo # Newline for better formatting
+
+  if [[ $REPLY =~ ^(yes|Yes|YES)$ ]]; then
+    echo "Starting rsync..."
+    # Using -e "ssh" is often implicit if using Host from SSH config,
+    # but explicitly stating it can sometimes help or be clearer.
+    rsync -avz --exclude '.git/index.lock' "$current_dir/" "$remote_dest/$repo_name"
+    echo "Rsync complete."
+  else
+    echo "Rsync aborted."
+  fi
+}
