@@ -20,4 +20,9 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
 -- Go if err != nil automatically
-vim.keymap.set("n", "<f2>", "A\nif err != nil {\nreturn err\n}<Esc>")
+vim.keymap.set("n", "<leader><f2>", "A\nif err != nil {\nreturn err\n}<Esc>", { desc = "Go if err != nil" })
+
+-- Rename using IncRename
+vim.keymap.set("n", "<leader>rn", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, desc = "Rename" })
