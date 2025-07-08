@@ -31,6 +31,8 @@ unset rc
 export GOPATH=$HOME/go
 . "$HOME/.cargo/env"
 
+export EDITOR=nvim
+
 # add glob expansion for bash
 shopt -s extglob
 
@@ -65,3 +67,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 eval "$(starship init bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
