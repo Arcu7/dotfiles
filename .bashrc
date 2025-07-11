@@ -32,6 +32,7 @@ export GOPATH=$HOME/go
 . "$HOME/.cargo/env"
 
 export EDITOR=nvim
+export PATH="$HOME/go/bin:$PATH"
 
 # add glob expansion for bash
 shopt -s extglob
@@ -54,6 +55,7 @@ alias la='ls -A'
 alias nvconf='cd ~/.config/nvim'
 
 # git aliases
+alias fov='git fetch origin -v'       # fetch from origin
 alias fch='git diff --shortstat'      # see how many files have changed in the current git repository
 alias explode='git reset --hard @{u}' # git hard reset to upstream
 alias lg='lazygit'                    # lazygit
