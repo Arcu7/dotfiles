@@ -40,25 +40,30 @@ shopt -s extglob
 # bat aliases
 alias cat='bat --paging=never'
 
-# go test aliases
-alias gtb='go test -v -bench'
-alias gtbm='go test -v -bench . -benchmem'
-alias gtc='go test -v -cover'
-alias gtv='go test -v'
-
 # eza aliases
 alias ls='eza --header --icons --git'
 alias ll='ls -alF'
 alias la='ls -A'
 
+# zoxide aliases
+alias cd="z"
+
 # change directory to the neovim configuration directory
 alias nvconf='cd ~/.config/nvim'
+
+# go test aliases
+alias gtb='go test -v -bench'
+alias gtbm='go test -v -bench . -benchmem'
+alias gtc='go test -v -cover'
+alias gtv='go test -v'
+alias gtf='go test -fuzz=Fuzz'
 
 # git aliases
 alias fov='git fetch origin -v'       # fetch from origin
 alias fch='git diff --shortstat'      # see how many files have changed in the current git repository
 alias explode='git reset --hard @{u}' # git hard reset to upstream
 alias lg='lazygit'                    # lazygit
+alias gbrd='git branch --sort=-committerdate'
 
 # rsync aliases
 alias grtpc='rsync_git_repo pc:/home/rifaldo/work/sms-be/'
@@ -71,3 +76,5 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(/home/rifaldo/.local/bin/mise activate bash)"
+eval "$(zoxide init bash)"

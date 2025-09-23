@@ -1,16 +1,16 @@
 return {
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   opts = {
-  --     suggestion = {
-  --       enabled = true,
-  --       keymap = {
-  --         accept = "<C-a>",
-  --       },
-  --     },
-  --     panel = {
-  --       enabled = false,
-  --     },
-  --   },
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      suggestion = {
+        enabled = false,
+        -- keymap = {
+        --   accept = "<C-a>",
+        -- },
+      },
+      panel = {
+        enabled = false,
+      },
+    },
+  },
 }

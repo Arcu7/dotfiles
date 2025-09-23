@@ -26,3 +26,8 @@ vim.keymap.set("n", "<leader><f2>", "A\nif err != nil {\nreturn err\n}<Esc>", { 
 vim.keymap.set("n", "<leader>rn", function()
   return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true, desc = "Rename" })
+
+-- tiny-code-action.nvim
+vim.keymap.set({ "n" }, "<leader>ca", function()
+  require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })
