@@ -15,23 +15,20 @@ return {
     end,
   },
   -- {
-  --   "smjonas/inc-rename.nvim",
+  --   "rachartier/tiny-code-action.nvim",
+  --   dependencies = {
+  --     { "nvim-lua/plenary.nvim" },
+  --     {
+  --       "folke/snacks.nvim",
+  --       opts = {
+  --         terminal = {},
+  --       },
+  --     },
+  --   },
+  --   event = "LspAttach",
   --   opts = {
-  --     input_buffer_type = "snacks",
+  --     backend = "delta",
+  --     picker = "buffer",
   --   },
   -- },
-  {
-    "rachartier/tiny-code-action.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      {
-        "folke/snacks.nvim",
-        opts = {
-          terminal = {},
-        },
-      },
-    },
-    event = "LspAttach",
-    opts = {},
-  },
 }
