@@ -1,0 +1,21 @@
+return {
+  -- {
+  --   "mistweaverco/kulala.nvim",
+  --   keys = {
+  --     -- { "<leader>Rs", desc = "Send request" },
+  --     -- { "<leader>Ra", desc = "Send all requests" },
+  --     -- { "<leader>Rb", desc = "Open scratchpad" },
+  --     -- { "<leader>Rc", "<cmd>lua require('kulala').copy()<cr>", desc = "Copy as cURL", ft = "http" },
+  --     -- { "<leader>RC", "<cmd>lua require('kulala').from_curl()<cr>", desc = "Paste from curl", ft = "http" },
+  --     -- { "<leader>RS", "<cmd>lua require('kulala').show_stats()<cr>", desc = "Show stats", ft = "http" },
+  --     -- { "<leader>Rt", "<cmd>lua require('kulala').toggle_view()<cr>", desc = "Toggle headers/body", ft = "http" },
+  --   },
+  --   ft = { "http", "rest" },
+  --   opts = {
+  --     global_keymaps = true,
+  --     global_keymaps_prefix = "<leader>R",
+  --     kulala_keymaps_prefix = "",
+  --     lsp = { formatter = true },
+  --   },
+  -- },
+}
