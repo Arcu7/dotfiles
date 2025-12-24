@@ -13,6 +13,10 @@ vim.keymap.set("n", "<C-u>", "<C-u> zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
+-- Insert UUID
+vim.keymap.set("n", "<leader>iu", "i<c-r>=trim(system('uuidgen'))<CR><esc>", { desc = "Insert UUID" })
+vim.keymap.set("x", "<leader>iu", "c<c-r>=trim(system('uuidgen'))<CR><esc>", { desc = "Insert UUID" })
+
 -- -- tiny-code-action.nvim
 -- vim.keymap.set({ "n", "x" }, "<leader>cs", function()
 --   require("tiny-code-action").code_action({})
@@ -22,5 +26,6 @@ vim.keymap.set("n", "N", "Nzz")
 local wk = require("which-key")
 wk.add({
   { "<leader>B", group = "PBreakpoints" },
+  { "<leader>i", group = "Insert misc stuff" },
   { "<leader>ca" },
 })
