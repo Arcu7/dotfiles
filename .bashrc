@@ -76,7 +76,6 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_EXTRA_CA_CERTS="/usr/share/ca-certificates/extra/zscalercert.crt"
 
 eval "$(starship init bash)"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(/home/rifaldo/.local/bin/mise activate bash)"
+eval "$(fzf --bash)"
 eval "$(zoxide init bash)"
+eval "$(/home/rifaldo/.local/bin/mise activate bash)"
