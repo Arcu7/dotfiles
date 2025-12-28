@@ -69,6 +69,12 @@ alias gbrd='git branch --sort=-committerdate'
 alias grtpc='rsync_git_repo pc:/home/rifaldo/work/sms-be/'
 alias grtlap='rsync_git_repo laptop:/home/rifaldo/work/sms/be-sales-management-system/'
 
+# fastfetch alias
+alias ff='fastfetch'
+
+# tmux alias
+alias tks='tmux kill-session'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
