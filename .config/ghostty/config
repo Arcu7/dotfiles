@@ -4,7 +4,7 @@ clipboard-read = allow
 clipboard-write = allow
 window-subtitle = working-directory
 window-height = 40
-window-width = 160
+window-width = 150
 theme = Rose Pine
 bold-is-bright = true
 background = #191724
@@ -29,6 +29,10 @@ palette = 12=#9ccfd8
 palette = 13=#c4a7e7
 palette = 14=#ebbcba
 palette = 15=#e0def4
+
+# background-image = ./theresa.png
+# background-image-opacity = 0.9
+background-opacity = 0.95
 
 # Uncomment this when VIM mode is released in Ghostty
 # # Vim-mode keybindings for Ghostty.
