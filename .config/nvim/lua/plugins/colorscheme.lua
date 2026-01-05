@@ -6,7 +6,7 @@ return {
     opts = {
       styles = {
         italic = false,
-        transparency = true,
+        transparency = false,
       },
     },
   },

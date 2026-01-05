@@ -32,7 +32,7 @@ palette = 15=#e0def4
 
 # background-image = ./theresa.png
 # background-image-opacity = 0.9
-background-opacity = 0.95
+# background-opacity = 0.95
 
 # Uncomment this when VIM mode is released in Ghostty
 # # Vim-mode keybindings for Ghostty.

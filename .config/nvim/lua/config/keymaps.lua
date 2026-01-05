@@ -4,8 +4,8 @@
 -- vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain!" })
 
 -- For colemak remapping
-vim.keymap.set({ "n", "v" }, "j", "k")
-vim.keymap.set({ "n", "v" }, "k", "j")
+-- vim.keymap.set({ "n", "v" }, "j", "k")
+-- vim.keymap.set({ "n", "v" }, "k", "j")
 -- vim.keymap.set({ "n", "v" }, "h", "l")
 -- vim.keymap.set({ "n", "v" }, "l", "h")
 
