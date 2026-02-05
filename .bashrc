@@ -85,3 +85,9 @@ eval "$(starship init bash)"
 eval "$(fzf --bash)"
 eval "$(zoxide init bash)"
 eval "$(/home/rifaldo/.local/bin/mise activate bash)"
+
+PATH="/home/rifaldo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/rifaldo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/rifaldo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/rifaldo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/rifaldo/perl5"; export PERL_MM_OPT;
