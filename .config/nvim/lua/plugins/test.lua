@@ -20,7 +20,7 @@ return {
         min_coverage = 80.0, -- minimum coverage threshold (used for highlighting)
       },
       lang = {
-        go = { coverage_file = "test_reports/coverage.out" },
+        go = { coverage_file = "coverage.out" },
       },
     })
   end,
