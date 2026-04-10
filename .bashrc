@@ -75,6 +75,10 @@ alias ff='fastfetch'
 # tmux alias
 alias tks='tmux kill-session'
 
+# clear cache
+alias cch1='sudo sync; sudo echo 1 > sudo /proc/sys/vm/drop_caches'
+alias cch2='sudo sync; sudo echo 2 > sudo /proc/sys/vm/drop_caches'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
@@ -85,3 +89,6 @@ eval "$(starship init bash)"
 eval "$(fzf --bash)"
 eval "$(zoxide init bash)"
 eval "$(/home/rifaldo/.local/bin/mise activate bash)"
+
+# opencode
+export PATH=/home/rifaldo/.opencode/bin:$PATH
