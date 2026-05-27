@@ -92,3 +92,4 @@ eval "$(/home/rifaldo/.local/bin/mise activate bash)"
 
 # opencode
 export PATH=/home/rifaldo/.opencode/bin:$PATH
+. "/home/rifaldo/.deno/env"
