@@ -1,27 +1,25 @@
 return {
-  --   {
-  --     "folke/snacks.nvim",
-  --     ---@type snacks.Config
-  --     opts = {
-  --       dashboard = {
-  --         preset = {
-  --           -- Used by the `header` section
-  --           header = [[
-  --           　　キ　ャ　ラ　ク　タ　ー　・　ボ　ー　カ　ル　・　シ　リ　ー　ズ　０　１
-  -- 　　　　　＿　　　　　　　　　　　＿
-  -- 　　　 ＿Ｌ ｊ__　＿＿＿　 ＿＿Ｌ ｊ＿__
-  -- 　　　 |＿　　 ）|＿＿　 | |__ 　 .＿　 ＿）　l⌒l
-  -- 　　　　／ ／／ｌi´ﾞｉ |　 |─┘ └┘└─,│.└───‐ ､　 ／￣￣￣￣ l
-  -- 　　 ／ ／-（__ノ|　| |　 |─＝＝＝‐─‐'ﾞ└─────' ／　／￣￣|　　|
-  -- 　／ ／ l. 　 ＼ |　| |　 |　 |　ﾆﾆﾆ.ヽ｀ヽ　┌────‐､ | ／　　　／　／
-  -- 　|／　　|　 |ヽ.| |　| |　 |　 | ┌─‐' ﾉ　!　└────‐'　　　　 ／　／
-  -- 　　　 　 l　 |. 　 |　| |　 |　 |　￣￣　_.ノ　|￣￣￣￣￣￣l　　／　／
-  -- 　　　　　￣　 　 ￣　￣　　￣￣￣　　　 ￣￣￣￣￣|　 |／　／
-  -- 　 　 Ｈ　Ａ　Ｔ　Ｓ　Ｕ　Ｎ　Ｅ 　 Ｍ　Ｉ　Ｋ　Ｕ　　 　 　 |／　／
-  -- 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 ＼／
-  --           ]],
-  --         },
-  --       },
-  --     },
-  --   },
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
+  dependencies = { "amansingh-afk/milli.nvim" },
+  -- TODO: This is not working correctly rn when using 'nvim .' (run with explorer) so need to fix
+  opts = function(_, opts)
+    local milli = require("milli")
+    local splash = milli.load({ splash = "lapipi" })
+
+    milli.snacks({ splash = "lapipi", loop = true })
+
+    opts.dashboard = vim.tbl_deep_extend("force", opts.dashboard or {}, {
+      enabled = true,
+      preset = {
+        header = table.concat(splash.frames[1], "\n"),
+      },
+      sections = {
+        { section = "header", padding = 1 },
+        { section = "keys", gap = 1, padding = 1 },
+        { section = "startup" },
+      },
+    })
+  end,
 }
