@@ -37,3 +37,53 @@ function y() {
   [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
   command rm -f -- "$tmp"
 }
+
+function find_package_manager() {
+  declare -A os_packagers=(
+    [apt - get]="Debian/Ubuntu"
+    [dnf]="Fedora/RHEL"
+    [yum]="CentOS/RHEL"
+    [pacman]="Arch Linux"
+    [apk]="Alpine"
+    [zypper]="openSUSE"
+  )
+
+  PACKAGE_MANAGER=""
+
+  for mgr in "${!os_packagers[@]}"; do
+    if command -v "$mgr" &>/dev/null; then
+      PACKAGE_MANAGER="$mgr"
+      break
+    fi
+  done
+
+  if [ -n "$PACKAGE_MANAGER" ]; then
+    echo PACKAGE_MANAGER
+  else
+    echo "Error: Supported package manager not found." >&2
+    exit 1
+  fi
+}
+
+function setup_new() {
+  package_manager=$(find_package_manager)
+  if [[ "$package_manager" == "dnf" ]]; then
+    # Essentials
+    sudo dnf install zoxide
+    sudo dnf install bat
+    sudo dnf install eza
+    sudo dnf install fzf
+
+    # Extra
+    sudo dnf install lazygit
+    sudo dnf install fastfetch
+  fi
+  #TODO: lazydoro code the other package managers
+
+  # starship
+  curl -sS https://starship.rs/install.sh | sh
+
+  # mise
+  curl https://mise.run | sh
+  mise doctor
+}
