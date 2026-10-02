@@ -35,3 +35,10 @@ wk.add({
   { "<leader>i", group = "Insert misc stuff" },
   { "<leader>ca" },
 })
+
+local function multicursors_clear_all()
+  -- Clears out the internal native multicursor namespace
+  vim.api.nvim_buf_clear_namespace(0, vim.api.nvim_create_namespace("nvim.multicursor"), 0, -1)
+end
+
+vim.keymap.set("n", "dq", multicursors_clear_all, { desc = "Clear all multicursors" })
